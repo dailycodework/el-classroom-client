@@ -1,0 +1,252 @@
+#home-header {
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 0;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.mobile_menu {
+  height: 60px;
+  align-items: center;
+  a {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+#home-header > .container {
+  height: auto;
+}
+
+.hometop-btn:hover ::ng-deep .mat-button-focus-overlay {
+  display: none;
+}
+
+#home-header:not(.header-fixed) .hometop-btn ::ng-deep .mat-button-ripple {
+  top: -22px;
+  bottom: -22px;
+}
+
+.header-fixed {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0 !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  animation: 0.6s slideDown forwards;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.header-fixed .container {
+  height: 60px !important;
+}
+
+.header-fixed .hometop-btn {
+  line-height: 60px !important;
+}
+
+.home-logo {
+  display: flex;
+  align-items: center;
+  a {
+    display: inherit;
+  }
+}
+
+#menu-toggle {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.icon-button {
+  .mat-icon {
+    font-size: 20px;
+  }
+}
+
+// dropdown menu
+nav {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        color: #fff;
+        cursor: pointer;
+      }
+      ul {
+        text-align: left;
+        li {
+          box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.04),
+            0 1px 6px rgba(0, 0, 0, 0.04);
+          text-align: center;
+          padding: 10px;
+          cursor: pointer;
+          &:first-child {
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+          }
+          &:last-child {
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+          }
+          ul {
+            text-align: left;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Hide Dropdowns by Default */
+
+nav ul ul {
+  position: absolute;
+  top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: 0% 0%;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-style: preserve-3d;
+  transform: rotateX(-75deg);
+  position: absolute;
+  top: 50px;
+  /* the height of the main nav */
+}
+
+/* Display Dropdowns on Hover */
+
+nav ul li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateX(0deg);
+}
+
+/* Fisrt Tier Dropdown */
+
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+
+nav ul ul ul li {
+  position: relative;
+  top: -50px;
+  left: 145px;
+}
+
+/* Change this in order to change the Dropdown symbol */
+
+li > a:after {
+  content: " +";
+}
+
+li > a:only-child:after {
+  content: "";
+}
+
+@media (max-width: 991px) {
+  #home-header {
+    padding: 0;
+  }
+  #home-header > .container {
+    height: 60px;
+    padding: 0;
+  }
+  .menu-opened:host .header-mobile-top {
+    padding: 13px 0;
+  }
+  #menu-toggle {
+    display: block;
+  }
+  .menu-opened:host .container {
+    height: auto !important;
+  }
+  .home-logo {
+    margin-left: 15px;
+  }
+  .top-menu {
+    display: none !important;
+  }
+  .menu-opened:host .top-menu {
+    display: block !important;
+    width: 100% !important;
+    flex: none !important;
+    background: #f3f3f3;
+  }
+  .menu-opened:host .top-menu button {
+    display: block;
+    width: 100%;
+    line-height: 56px !important;
+  }
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    margin-top: 0px;
+    text-align: center;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  li.nav-item {
+    text-align: center;
+  }
+  nav ul ul {
+    display: none;
+    position: relative;
+    top: 10px;
+    /* the height of the main nav */
+  }
+  nav ul ul ul li {
+    position: relative;
+    top: 10px;
+    left: 5px;
+  }
+  nav ul li:hover > ul {
+    display: inline-block;
+  }
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+span.navbar-toggler-icon .eva {
+  -webkit-text-fill-color: #fff;
+}
+
+@media only screen and (max-width: 765px) {
+  .mobile_menu {
+    height: 60px;
+    align-items: center;
+    padding: 0px 20px;
+  }
+}

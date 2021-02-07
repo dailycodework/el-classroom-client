@@ -1,0 +1,55 @@
+<section id="services-wrap" class="services-caurosel-wrap light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-header mb-5">
+                <h2 class="font-weight-bold">Our Services</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam laborum, ducimus,
+                    laboriosam sint dolorum aspernatur libero.</p>
+
+            </div>
+            <div class="col-md-12">
+                <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+                    <ngu-tile *nguCarouselDef="let item; let i = index">
+
+                        <div class="service-wrap ">
+                            <div class="card o-hidden mb-4">
+
+                                <div class="card-header p-0 text-left ">
+
+                                    <img class="img-responsive" [src]="item.icon">
+                                </div>
+                                <div class="card-body text-left">
+                                    <h3 class="card-title text-capitalize font-weight-bold">{{item.title}}</h3>
+                                    <p class="card-text">{{item.text}}</p>
+                                    <!-- <a href="#" class="text-primary text-capitalize font-weight-medium"> <span>Read More</span> </a> -->
+                                </div>
+                                <div class="card-footer pl-3 text-left">
+                                    <a href="#" class="btn btn-lg p-1 mr-1 text-dark">
+                                        <span class="eva eva-link-2-outline"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-lg p-1 mr-1 text-dark">
+                                        <span class="eva eva-share"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </ngu-tile>
+                    <span NguCarouselPrev
+                        class="ngu_control_button half-button leftRs btn btn-circle btn-white btn-shadow"
+                        [style.opacity]="myCarousel.isFirst ? 0.5:1"><i class="eva eva-chevron-left-outline"></i></span>
+                    <span NguCarouselNext
+                        class="ngu_control_button half-button rightRs btn btn-circle btn-white btn-shadow"
+                        [style.opacity]="myCarousel.isLast ? 0.5:1"><i class="eva eva-chevron-right-outline"></i></span>
+
+                </ngu-carousel>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

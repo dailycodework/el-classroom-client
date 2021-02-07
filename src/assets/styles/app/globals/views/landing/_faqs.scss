@@ -1,0 +1,19 @@
+.faqs-wrap {
+    .accordion .card {
+        margin-bottom: 30px;
+        .card-header {
+            padding: 15px;
+            a {
+                color: $black;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0px;
+        }
+        .btn-link {
+            font-weight: 600;
+            color: #47404f;
+            font-size: 14px;
+        }
+    }
+}

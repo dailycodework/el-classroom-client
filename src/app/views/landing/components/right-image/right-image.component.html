@@ -1,0 +1,112 @@
+<section class="right-image-wrap p-t-b-80 light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-header mb-5">
+                <h2 class="font-weight-bold">What Customer Love Most</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam laborum, ducimus,
+                    laboriosam sint dolorum aspernatur libero.</p>
+
+            </div>
+
+            <div class="col-md-12 col-lg-6 col-sm-12 mb-4 mb-lg-0">
+                <div class="row m-0">
+                    <div class="col-md-6 col-sm-6 mb-4">
+                        <div class="card">
+
+                            <div class="card-body d-flex pt-4 pb-4 ">
+                                <div class="mr-2">
+                                    <i class="eva eva-pie-chart-outline mr-1 text-36 "></i>
+                                </div>
+                                <div class="">
+                                    <h4 class="card-title font-weight-bold">Full Analytics
+                                    </h4>
+                                    <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+                    <div class="col-md-6 col-sm-6 mb-4">
+                        <div class="card">
+
+                            <div class="card-body d-flex pt-4 pb-4">
+                                <div class="mr-2"><i class="eva eva-clock-outline mr-1 text-36 "></i></div>
+                                <div class="">
+                                    <h4 class="card-title font-weight-bold"> Diagnose quickly</h4>
+                                    <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+                    <div class="col-md-6 col-sm-6 mb-4 mb-lg-0 mb-md-0 mb-sm-0">
+                        <div class="card">
+
+                            <div class="card-body d-flex pt-4 pb-4">
+                                <div class="mr-2"><i class="eva eva-lock-outline mr-1 text-36 "></i></div>
+                                <div class="">
+                                    <h4 class="card-title font-weight-bold">Safe & Secure</h4>
+                                    <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+                    <div class="col-md-6 col-sm-6 mb-0 mb-lg-0 mb-md-0 mb-sm-0">
+                        <div class="card">
+
+                            <div class="card-body d-flex pt-4 pb-4">
+                                <div class="mr-2"><i class="eva eva-pricetags-outline mr-1 text-36 "></i></div>
+                                <div class="">
+                                    <h4 class="card-title font-weight-bold">Best Pricing
+                                    </h4>
+                                    <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+
+                </div>
+            </div>
+            <!-- end of col6 row -->
+            <div class="col-md-12 col-lg-5 col-sm-12 offset-lg-1">
+
+                <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+                    <ngu-tile *nguCarouselDef="let item; let i = index">
+
+
+                        <img class="img-responsive  mb-4 " [src]="item.photo" alt="Card image cap">
+
+
+
+
+
+                    </ngu-tile>
+
+                    <span NguCarouselPrev
+                        class="ngu_control_button half-button  leftRs btn btn-circle btn-white btn-shadow"
+                        [style.opacity]="myCarousel.isFirst ? 0.5:1"><i class="eva eva-chevron-left-outline"></i></span>
+                    <span NguCarouselNext
+                        class="ngu_control_button half-button  rightRs btn btn-circle btn-white btn-shadow"
+                        [style.opacity]="myCarousel.isLast ? 0.5:1"><i class="eva eva-chevron-right-outline"></i></span>
+
+
+
+                </ngu-carousel>
+            </div>
+
+        </div>
+    </div>
+</section>

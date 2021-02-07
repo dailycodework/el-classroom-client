@@ -1,0 +1,78 @@
+<section class="left-image-wrap p-t-b-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-header mb-5">
+                <h2 class="font-weight-bold">We Ready to Provide</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam laborum, ducimus, laboriosam sint dolorum aspernatur libero.</p>
+
+            </div>
+            <div class="col-md-6 col-sm-12 mb-5 mb-lg-0 mb-md-0 mt-mb-5 mt-lg-5">
+
+                <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+                    <ngu-tile *nguCarouselDef="let item; let i = index">
+
+
+                        <img class="img-responsive w-100 mb-4" [src]="item.photo" alt="Card image cap">
+
+
+
+
+
+                    </ngu-tile>
+
+                    <span NguCarouselPrev class="ngu_control_button half-button  leftRs btn btn-circle btn-white btn-shadow" [style.opacity]="myCarousel.isFirst ? 0.5:1"><i
+                        class="eva eva-chevron-left-outline"></i></span>
+                    <span NguCarouselNext class="ngu_control_button half-button  rightRs btn btn-circle btn-white btn-shadow" [style.opacity]="myCarousel.isLast ? 0.5:1"><i
+                        class="eva eva-chevron-right-outline"></i></span>
+
+
+
+                </ngu-carousel>
+
+            </div>
+            <div class="col-md-5 offset-md-1 col-sm-12">
+                <div class="row">
+
+
+                    <div class="col-md-12 col-sm-6 mb-4">
+                        <div class="card">
+
+                            <div class="card-body pt-3 pb-3">
+
+                                <h4 class="card-title font-weight-bold">Sales and Marketing Alignment</h4>
+                                <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+                    <div class="col-md-12 col-sm-6 mb-4">
+                        <div class="card">
+
+                            <div class="card-body pt-3 pb-3">
+
+                                <h4 class="card-title font-weight-bold">Relationship-based Engagement</h4>
+                                <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+                    <div class="col-md-12 col-sm-6  mb-lg-0 mb-md-0 mb-sm-0">
+                        <div class="card">
+
+                            <div class="card-body pt-3 pb-3">
+
+                                <h4 class="card-title font-weight-bold">Transparent Pricing</h4>
+                                <p class="m-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of col  -->
+                </div>
+            </div>
+            <!-- end of col6 row -->
+        </div>
+    </div>
+</section>

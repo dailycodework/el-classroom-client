@@ -1,0 +1,89 @@
+.rightRs {
+  position: relative;
+  right: -10px;
+  top: 40%;
+  overflow: hidden;
+}
+
+.leftRs {
+  position: relative;
+  left: 0px;
+  top: 40%;
+  overflow: hidden;
+}
+
+.ngu_control_button {
+  height: 60px;
+  width: 60px;
+  line-height: 70px;
+  padding: 0px;
+  overflow: hidden;
+  z-index: 999;
+  /* color: #fff; */
+  font-size: 40px;
+}
+
+.tile {
+  box-shadow: none !important;
+}
+
+.ngu-touch-container {
+  overflow: hidden;
+}
+
+.ngucarousel {
+  /* position: relative; */
+  overflow: unset !important;
+  height: 100%;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ngu_control_button {
+  height: 60px;
+  width: 60px;
+  line-height: 70px;
+  padding: 0px;
+  overflow: hidden;
+  z-index: 9;
+  /* color: #fff; */
+  cursor: pointer;
+  font-size: 40px;
+  .eva {
+    background: transparent;
+    background-image: none !important;
+    color: #fff;
+    -webkit-text-fill-color: #fff !important;
+  }
+}
+
+.ngu_control_button:focus {
+  border: 0;
+  box-shadow: 0 0 0 0.2rem transparent;
+}
+
+ngu-tile.item.ng-star-inserted {
+  padding: 0px 15px;
+}
+
+@media only screen and (max-width: 765px) {
+  .ngucarousel {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
+  }
+  .rightRs {
+    position: relative;
+    right: -3%;
+    top: 40%;
+    overflow: hidden;
+  }
+  .leftRs {
+    position: relative;
+    left: 0%;
+    top: 40%;
+    overflow: hidden;
+  }
+}

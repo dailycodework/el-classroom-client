@@ -1,5 +1,7 @@
-<div class="main-wrap">
-    <app-header></app-header>
-    <router-outlet></router-outlet>
 
+<div [ngClass]="[backgroundColor]">
+<div class="main-wrap">
+    <router-outlet></router-outlet>
+   <app-footer></app-footer>
+</div>
 </div>

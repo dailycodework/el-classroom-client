@@ -1,0 +1,55 @@
+<nav id="home-header" [ngClass]="{'header-fixed': isFixed}" class="navbar navbar-expand-lg text-16 ">
+  <div class="container">
+
+
+    <div class="d-flex flex-grow-1 mobile_menu">
+            <span class="w-100 d-lg-none d-block">
+        <!-- hidden spacer to center brand on mobile --></span>
+      <!-- <a class="navbar-brand d-none d-lg-inline-block" href="#">
+Navbar 6
+</a> -->
+      <a class="navbar-brand-two mx-auto  d-inline-block" routerLink="/">
+        <img src="assets/images/landing/lOGO_d/logo_white.png" alt="logo">
+      </a>
+      <div class="w-100 text-right">
+        <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          <span class="navbar-toggler-icon">
+            <i class="eva eva-menu-outline text-30 text-white"></i>
+          </span>
+
+        </button>
+      </div>
+    </div>
+    <div class="collapse  navbar-collapse flex-grow-1 text-right" id="collapseExample" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav ml-auto flex-nowrap">
+        <li class="nav-item">
+          <a href="#" routerLink="/worksheets" class="nav-link m-2 menu-item nav-active">Worksheets</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" routerLink="powerpoints" class="nav-link m-2 menu-item nav-active">PowerPoints</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" scrollTo="contacts-wrap" class="nav-link m-2 menu-item">Leave a Suggestion</a>
+        </li>
+
+        <!-- drop down menu start -->
+        <li class="nav-item">
+          <a class="nav-link m-2 menu-item">Account</a>
+          <!-- First  Drop Down -->
+          <ul>
+            <li (click)="hidemenu()" class="nav-item">
+              <a routerLink="/profile" class="  menu-item">profile</a>
+            </li>
+            <li (click)="hidemenu()" class="nav-item">
+              <a routerLink="/upload" class="  menu-item">manage uploads</a>
+            </li>
+            <li (click)="hidemenu()" class="nav-item">
+              <a routerLink="/logout" class="  menu-item">Log out</a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

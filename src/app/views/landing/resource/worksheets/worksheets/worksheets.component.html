@@ -1,13 +1,28 @@
 
-<router-outlet></router-outlet>
+<ul>
+  <li>
+    <a [routerLink]="'worksheets'" routerLinkActive="active">All Worksheets</a>
+  </li>
+
+  <li>
+    <a [routerLink]="'kindergartens'" routerLinkActive="active">Preschools</a>
+  </li>
+  <li>
+    <a [routerLink]="'kindergartens'" routerLinkActive="active">Kindergartens</a>
+  </li>
+  <li>
+    <a [routerLink]="'teenagers'" routerLinkActive="active">Teenagers</a>
+  </li>
+  <li>
+    <a [routerLink]="'adults'" routerLinkActive="active">Adults</a>
+  </li>
+</ul>
 
 
-
-
-<!--
 
 <section id="teams-wrap" class="worksheet-wrap p-t-b-80 light-gray">
   <div class="container">
+    <h5>Worksheets for all level</h5>
     <div class="row">
       <div class="col-md-12  section-header mb-5">
         <h2 class="font-weight-bold">Worksheets for all levels</h2>
@@ -234,4 +249,5 @@
     </div>
   </div>
 </section>
--->
+
+<router-outlet></router-outlet>

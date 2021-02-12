@@ -13,9 +13,9 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { FooterComponent } from '../../../shared/footer/footer.component';
 import { PptComponent } from './components/ppt/ppt.component';
 import { FormsModule } from '@angular/forms';
-import {WorksheetModule} from '../worksheets/worksheet.module';
+import {WorksheetModule} from '../resource/worksheets/worksheet.module';
 import {RouterModule} from '@angular/router';
-import {PowerPointsModule} from '../powerpoints/power-points.module';
+import {PowerPointsModule} from '../resource/powerpoints/power-points.module';
 import {HomeHeaderComponent} from '../../../shared/home-header/home-header.component';
 
 

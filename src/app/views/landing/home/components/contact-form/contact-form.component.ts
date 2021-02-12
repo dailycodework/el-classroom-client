@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: "app-contact-form",
+  selector: "el-contact-form",
   templateUrl: "./contact-form.component.html",
   styleUrls: ["./contact-form.component.scss"],
   animations: [SharedAnimations]

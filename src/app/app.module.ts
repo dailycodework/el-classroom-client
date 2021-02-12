@@ -14,16 +14,10 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import {ResourceHeaderComponent} from './shared/resource-header/resource-header.component';
 import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
-import {WorksheetModule} from './views/landing/worksheets/worksheet.module';
-import {PowerPointsModule} from './views/landing/powerpoints/power-points.module';
-import { FileUploadComponent } from './views/landing/upload/file-upload/file-upload.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ResourceHeaderComponent,
-    FileUploadComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +33,7 @@ import { FileUploadComponent } from './views/landing/upload/file-upload/file-upl
     NgbCollapseModule
   ],
   providers: [],
-  exports: [
-    ResourceHeaderComponent
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

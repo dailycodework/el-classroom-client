@@ -5,9 +5,8 @@ import { KindergartensComponent } from './kindergartens/kindergartens.component'
 import { TeenagersComponent } from './teenagers/teenagers.component';
 import { WorksheetsComponent } from './worksheets/worksheets.component';
 import {WorksheetRoutingModule} from './worksheet-routing.module';
-import {HomeModule} from '../home/home.module';
-import { WorksheetsDashboardComponent } from './worksheets-dashboard/worksheets-dashboard.component';
-import {AppModule} from '../../../app.module';
+import { ResourcesDashboardComponent } from '../resources-dashboard.component';
+
 
 
 
@@ -19,10 +18,10 @@ import {AppModule} from '../../../app.module';
     KindergartensComponent,
     TeenagersComponent,
     WorksheetsComponent,
-    WorksheetsDashboardComponent],
+    ResourcesDashboardComponent],
   imports: [
     CommonModule,
-    WorksheetRoutingModule,
+    WorksheetRoutingModule
   ]
 })
 export class WorksheetModule { }

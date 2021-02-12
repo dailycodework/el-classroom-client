@@ -1,39 +1,31 @@
 import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from './views/landing/home/home.component';
-import {AdultsComponent} from './views/landing/worksheets/adults/adults.component';
-import {KindergartensComponent} from './views/landing/worksheets/kindergartens/kindergartens.component';
-import {TeenagersComponent} from './views/landing/worksheets/teenagers/teenagers.component';
-import {AdultsPptComponent} from './views/landing/powerpoints/adults/adults-ppt.component';
-import {KindergartensPptComponent} from './views/landing/powerpoints/kindergartens/kindergartens-ppt.component';
-import {TeenagersPptComponent} from './views/landing/powerpoints/teenagers/teenagers-ppt.component';
-import {WorksheetsComponent} from './views/landing/worksheets/worksheets/worksheets.component';
-import {PowerPointsComponent} from './views/landing/powerpoints/powerpoints/power-points.component';
-import {WorksheetRoutingModule} from './views/landing/worksheets/worksheet-routing.module';
-import {PowerPointsRoutingModule} from './views/landing/powerpoints/power-points-routing.module';
-import {WorksheetModule} from './views/landing/worksheets/worksheet.module';
-import {PowerPointsModule} from './views/landing/powerpoints/power-points.module';
-import {FileUploadComponent} from './views/landing/upload/file-upload/file-upload.component';
+import {ResourceModule} from './views/landing/resource/resource.module';
+import {WorksheetsComponent} from './views/landing/resource/worksheets/worksheets/worksheets.component';
+import {PowerPointsComponent} from './views/landing/resource/powerpoints/powerpoints/power-points.component';
+
 
 
 const routes: Routes = [
-  /*{ path: 'adults', component: AdultsComponent},
-  { path: 'kindergartens', component: KindergartensComponent},
-  { path: 'teenagers', component:TeenagersComponent},
-  { path: 'adults-ppt', component: AdultsPptComponent},
-  { path: 'kindergartens-ppt', component: KindergartensPptComponent},
-  { path: 'teenagers-ppt', component:TeenagersPptComponent},
-  { path: 'worksheets', component: WorksheetsComponent},
-  { path: 'power-points', component: PowerPointsComponent},*/
 
-  { path: '', component: HomeComponent},
-  { path: 'upload', component:FileUploadComponent}
-];
+  { path: 'worksheets', component: WorksheetsComponent,
+    loadChildren: () =>
+      import('./views/landing/resource/worksheets/worksheet.module').then(m => m.WorksheetModule) },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+
+
+  { path: 'powerpoints', component: PowerPointsComponent,
+    loadChildren: () =>
+      import('./views/landing/resource/powerpoints/power-points.module').then(m => m.PowerPointsModule) },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+
+  { path: '', component: HomeComponent}
+  ];
 
 @NgModule({
   imports: [
-    WorksheetModule,
-    PowerPointsModule,
+    ResourceModule,
     RouterModule.forRoot(routes, {useHash: false})],
     exports: [RouterModule]
 })

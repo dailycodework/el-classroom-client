@@ -3,7 +3,7 @@
 
         <div class="d-flex justify-content-between flex-grow-1 mobile_menu">
 
-            <a class="navbar-brand-two    d-inline-block" href="#" scrollTo="intro-wrap">
+            <a class="navbar-brand-two    d-inline-block" routerLink="/">
                 <img src="assets/images/landing/lOGO_d/logo_white.png" alt="logo">
             </a>
             <div class=" text-right">
@@ -26,7 +26,7 @@
              id="collapseExample" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item" (click)="hidemenu()">
-                    <a href="#" scrollTo="worksheet-wrap" class="nav-link m-2 menu-item nav-active">Worksheets</a>
+                    <a routerLink="worksheets" class="nav-link m-2 menu-item nav-active">Worksheets</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
                     <a href="#" scrollTo="ppt-wrap" class="nav-link m-2 menu-item nav-active">PowerPoints</a>

@@ -14,7 +14,7 @@ import { ScrollToDirective } from './directives/scroll-to.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 const exportedClasses = [

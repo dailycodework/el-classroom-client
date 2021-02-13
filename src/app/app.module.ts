@@ -6,18 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import {HomeModule} from './views/landing/home/home.module';
+import {HomeModule} from './home/home.module';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
-import {ResourceHeaderComponent} from './shared/resource-header/resource-header.component';
 import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
+import {FileUploadComponent} from './upload/file-upload/file-upload.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
     NgbCollapseModule
   ],
   providers: [],
-  exports: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

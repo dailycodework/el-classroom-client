@@ -7,7 +7,7 @@ import {
   Input
 } from "@angular/core";
 import {DOCUMENT} from "@angular/common";
-import {WINDOW_PROVIDERS, WINDOW} from "../../views/landing/helpers/window.helpers";
+import {WINDOW_PROVIDERS, WINDOW} from "../../helpers/window.helpers";
 
 @Component({
   selector: "el-home-header",

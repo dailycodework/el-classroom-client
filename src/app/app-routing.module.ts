@@ -1,32 +1,26 @@
 import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
-import {HomeComponent} from './views/landing/home/home.component';
-import {ResourceModule} from './views/landing/resource/resource.module';
-import {WorksheetsComponent} from './views/landing/resource/worksheets/worksheets/worksheets.component';
-import {PowerPointsComponent} from './views/landing/resource/powerpoints/powerpoints/power-points.component';
-
+import {HomeComponent} from './home/home.component';
+import {FileUploadComponent} from './upload/file-upload/file-upload.component';
+import {WorksheetModule} from './worksheets/worksheet.module';
+import {PowerPointsModule} from './powerpoints/power-points.module';
+import {WorksheetsComponent} from './worksheets/components/worksheets/worksheets.component';
 
 
 const routes: Routes = [
 
-  { path: 'worksheets', component: WorksheetsComponent,
-    loadChildren: () =>
-      import('./views/landing/resource/worksheets/worksheet.module').then(m => m.WorksheetModule) },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-
-
-  { path: 'powerpoints', component: PowerPointsComponent,
-    loadChildren: () =>
-      import('./views/landing/resource/powerpoints/power-points.module').then(m => m.PowerPointsModule) },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-
-  { path: '', component: HomeComponent}
-  ];
+  { path: '', component: HomeComponent},
+  { path: 'worksheets',
+    loadChildren: () => import('./worksheets/worksheet.module').then(m => m.WorksheetModule) },
+  {path: 'all-worksheets', redirectTo : 'worksheets/all-worksheets', pathMatch: 'full'},
+  { path: 'upload', component:FileUploadComponent}
+];
 
 @NgModule({
   imports: [
-    ResourceModule,
-    RouterModule.forRoot(routes, {useHash: false})],
+    WorksheetModule,
+    PowerPointsModule,
+    RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}

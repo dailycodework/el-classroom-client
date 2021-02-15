@@ -26,14 +26,14 @@
              id="collapseExample" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item" (click)="hidemenu()">
-                    <a routerLink="/all-worksheets"  class="nav-link m-2 menu-item nav-active">Worksheets</a>
+                    <a routerLink="/worksheets"  class="nav-link m-2 menu-item nav-active">Worksheets</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
-                    <a scrollTo="ppt-wrap" class="nav-link m-2 menu-item nav-active">PowerPoints</a>
+                    <a routerLink="/all-powerpoints" class="nav-link m-2 menu-item nav-active">PowerPoints</a>
                 </li>
 
                 <li (click)="hidemenu()" class="nav-item">
-                    <a scrollTo="contacts-wrap" class="nav-link m-2 menu-item">Leave a suggestion</a>
+                    <a routerLink="contacts" class="nav-link m-2 menu-item">Leave a suggestion</a>
                 </li>
 
                 <!-- drop down menu start -->

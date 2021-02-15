@@ -14,7 +14,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 import {FileUploadComponent} from './upload/file-upload/file-upload.component';
-
+import {ResourcesDashbComponent} from './resources/resources-dashb.component';
 
 
 
@@ -23,7 +23,8 @@ import {FileUploadComponent} from './upload/file-upload/file-upload.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ResourcesDashbComponent
   ],
   imports: [
     BrowserModule,

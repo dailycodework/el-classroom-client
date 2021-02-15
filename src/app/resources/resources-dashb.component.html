@@ -11,8 +11,6 @@
           <button class="btn btn-gradient" type="button">Search</button>
         </div>
       </div>
-
-
  <div class="text-white">
       <h2>Worksheets</h2>
 
@@ -27,18 +25,19 @@
 
       <h2>PowerPoints</h2>
 
-      <a class="text-white" [routerLink]="'all-worksheets'" routerLinkActive="active">See all powerpoints</a>
+      <a class="text-white" [routerLink]="'all-powerpoints'" routerLinkActive="active">See all powerpoints</a>
 
-      <a class="text-white" [routerLink]="'kindergartens'" routerLinkActive="active">Kindergartens</a>
+      <a class="text-white" [routerLink]="'kindergartens-ppt'" routerLinkActive="active">Kindergartens</a>
 
-      <a class="text-white" [routerLink]="'teenagers'" routerLinkActive="active">Teenagers</a>
+      <a class="text-white" [routerLink]="'teenagers-ppt'" routerLinkActive="active">Teenagers</a>
 
-      <a class="text-white" [routerLink]="'adults'" routerLinkActive="active">Adults</a>
+      <a class="text-white" [routerLink]="'adults-ppt'" routerLinkActive="active">Adults</a>
 
     </div>
     </div>
 
     <div class="col offset-3" id="main">
+
       <router-outlet></router-outlet>
     </div>
   </div>

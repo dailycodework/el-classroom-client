@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-3 px-1 position-fixed sidenav bg-danger">
+      <h2>Filter Search</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control"
+               placeholder="enter a topic to search"
+               aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-gradient" type="button">Search</button>
+        </div>
+      </div>
+      <div class="text-white">
+        <h2>Worksheets</h2>
+
+        <a class="text-white" [routerLink]="'all-worksheets'" routerLinkActive="active">See all worksheets</a>
+
+        <a class="text-white" [routerLink]="'kindergartens'" routerLinkActive="active">Kindergartens</a>
+
+        <a class="text-white" [routerLink]="'teenagers'" routerLinkActive="active">Teenagers</a>
+
+        <a class="text-white" [routerLink]="'adults'" routerLinkActive="active">Adults</a>
+
+
+        <h2>PowerPoints</h2>
+
+        <a class="text-white" [routerLink]="'all-powerpoints'" routerLinkActive="active">See all powerpoints</a>
+
+        <a class="text-white" [routerLink]="'kindergartens-ppt'" routerLinkActive="active">Kindergartens</a>
+
+        <a class="text-white" [routerLink]="'teenagers-ppt'" routerLinkActive="active">Teenagers</a>
+
+        <a class="text-white" [routerLink]="'adults-ppt'" routerLinkActive="active">Adults</a>
+
+      </div>
+</div>
+  </div>
+</div>

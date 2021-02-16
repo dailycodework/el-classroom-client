@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +14,9 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
-import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
-import {FileUploadComponent} from './upload/file-upload/file-upload.component';
+import { FileUploadComponent } from './upload/file-upload/file-upload.component';
+
+
 
 
 
@@ -27,6 +30,8 @@ import {FileUploadComponent} from './upload/file-upload/file-upload.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,

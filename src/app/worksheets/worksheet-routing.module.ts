@@ -5,6 +5,7 @@ import {KindergartensComponent} from './components/kindergartens/kindergartens.c
 import {TeenagersComponent} from './components/teenagers/teenagers.component';
 import {WorksheetsComponent} from './components/worksheets/worksheets.component';
 import {WorksheetDashbComponent} from './worksheet-dashb.component';
+import {SideNavComponent} from '../shared/side-nav/side-nav.component';
 
 
 
@@ -22,8 +23,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule, SideNavComponent],
   declarations: [
+    SideNavComponent
   ]
 })
 export class WorksheetRoutingModule {}

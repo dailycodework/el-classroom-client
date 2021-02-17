@@ -8,7 +8,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class FileUploadComponent implements OnInit {
  isSubmitted:boolean = false;
- imSrc : string = null;
+ imSrc : string = '/assets/images/elc.pdf';
  selectedImage : any = null;
 
 formTemplate = new FormGroup({
@@ -32,7 +32,7 @@ formTemplate = new FormGroup({
       this.selectedImage = event.target.files[0];
     }
     else
-      this.imSrc ='/assets/images/placeholder.jpg';
+      this.imSrc ='/assets/images/elc.pdf';
      this.selectedImage = null;
   }
   onSubmit(formValues) {

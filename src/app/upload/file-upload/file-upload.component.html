@@ -1,9 +1,16 @@
 
-<div class="container mt-5 pt-5">
+<div class="container-fluid mt-4 pt-4">
   <div class="row">
-    <div class="col-sm-10 col-lg-8 col-md-8 mr-auto border">
+
+    <div class="col-8 text-center">
+      <pdf-viewer class="file-previewer"
+                  [src]="imSrc" style="display: block" [render-text]="true">
+      </pdf-viewer>
+    </div>
+
+    <div class="col-sm-4 col-lg-4 col-md-4">
       <h3>
-        elClassroom file Upload
+        Worksheets Upload
       </h3>
       <p>Every uploaded materials will be available for public use after
         been reviewed and approved
@@ -64,10 +71,6 @@
             <i class="fa fa-fw fa-upload"></i> Upload </button>
         </div>
       </form>
-    </div>
-
-    <div class="col-4 text-center">
-      <img [src]="imSrc" class="image-preview" (click)="fileUpload.click()">
     </div>
 
   </div>

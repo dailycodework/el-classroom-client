@@ -15,6 +15,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import { FileUploadComponent } from './upload/file-upload/file-upload.component';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
 
 
 
@@ -41,7 +42,8 @@ import { FileUploadComponent } from './upload/file-upload/file-upload.component'
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    PdfViewerModule
   ],
   providers: [],
   exports: [

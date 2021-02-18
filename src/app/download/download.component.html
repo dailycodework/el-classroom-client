@@ -1,1 +1,21 @@
-<p>download works!</p>
+<div class="container-fluid">
+
+<!--  <ngx-extended-pdf-viewer
+    [src]="imSrc"
+    [showDownloadButton]="true"
+    useBrowserLocale="true">
+  </ngx-extended-pdf-viewer>-->
+
+
+  <ngx-extended-pdf-viewer
+    [src]="imSrc"
+    [showPrintButton]="true"
+    [showBookmarkButton]="false"
+    [showOpenFileButton]="false"
+    [showSidebarButton]="true"
+    [showDownloadButton]="true"
+    delayFirstView="6000"
+    useBrowserLocale="false">
+  </ngx-extended-pdf-viewer>
+
+</div>

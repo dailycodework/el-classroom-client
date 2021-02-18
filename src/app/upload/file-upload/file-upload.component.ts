@@ -11,7 +11,7 @@ import {finalize} from 'rxjs/operators';
 })
 export class FileUploadComponent implements OnInit {
  isSubmitted:boolean;
- defaultImage = '/assets/images/elc.pdf';
+ defaultImage = '/assets/images/elclass.pdf';
  imSrc : string = this.defaultImage;
  selectedImage : any;
 

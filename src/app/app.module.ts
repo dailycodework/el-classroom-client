@@ -18,6 +18,7 @@ import { FileUploadComponent } from './upload/file-upload/file-upload.component'
 import {PdfViewerModule} from 'ng2-pdf-viewer';
 import { DownloadComponent } from './download/download.component';
 import {WorksheetRoutingModule} from './worksheets/worksheet-routing.module';
+import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
 
 
 
@@ -47,6 +48,7 @@ import {WorksheetRoutingModule} from './worksheets/worksheet-routing.module';
         AngularFireStorageModule,
         NgbCollapseModule,
         PdfViewerModule,
+       NgxExtendedPdfViewerModule,
         WorksheetRoutingModule
     ],
   providers: [],

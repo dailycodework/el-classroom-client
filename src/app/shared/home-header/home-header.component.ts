@@ -25,8 +25,7 @@ export class HomeHeaderComponent implements OnInit {
   ngOnInit() {}
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    const offset =
-      this.window.pageYOffset ||
+    const offset = this.window.pageYOffset ||
       this.document.documentElement.scrollTop ||
       this.document.body.scrollTop || 0;
     if (offset > 10) {

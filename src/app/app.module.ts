@@ -16,6 +16,8 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import { FileUploadComponent } from './upload/file-upload/file-upload.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
+import { DownloadComponent } from './download/download.component';
+import {WorksheetRoutingModule} from './worksheets/worksheet-routing.module';
 
 
 
@@ -27,26 +29,29 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
 @NgModule({
   declarations: [
     AppComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    DownloadComponent
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    FormsModule,
-    SharedModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HomeModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // firestore
-    AngularFireAuthModule, // auth
-    AngularFireStorageModule,
-    NgbCollapseModule,
-    PdfViewerModule
-  ],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        FormsModule,
+        SharedModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HomeModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule, // firestore
+        AngularFireAuthModule, // auth
+        AngularFireStorageModule,
+        NgbCollapseModule,
+        PdfViewerModule,
+        WorksheetRoutingModule
+    ],
   providers: [],
   exports: [
+    AppComponent
   ],
   bootstrap: [AppComponent]
 })

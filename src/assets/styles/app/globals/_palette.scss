@@ -31,6 +31,24 @@
         border: 0px solid $transparent-gradient;
       }
     }
+
+    .nav-gradient {
+      @include directional-gradient(-29deg, $start-color, $end-color);
+      color: #fff;
+      border: 0px solid rgba(193, 15, 65, 0.8);
+      &:hover {
+        @include directional-gradient(-29deg, $start-color, $end-color);
+        color: #fff;
+        border: 0px solid $transparent-gradient;
+      }
+    }
+
+
+
+
+
+
+
     nav ul li ul li {
       @include directional-gradient(-29deg, $start-color, $end-color);
     }

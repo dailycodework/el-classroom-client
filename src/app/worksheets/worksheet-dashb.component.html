@@ -1,4 +1,4 @@
-
+<!--
 <div class="container-fluid">
   <div class="row">
 
@@ -16,13 +16,15 @@
       <div class="text-white">
         <h2>Worksheets</h2>
 
-        <a class="text-white" [routerLink]="'all-worksheets'" routerLinkActive="active">See all worksheets</a>
+
 
         <a class="text-white" [routerLink]="'kindergartens'" routerLinkActive="active">Kindergartens</a>
 
-        <a class="text-white" [routerLink]="'teenagers'" routerLinkActive="active">Teenagers</a>
+        <a class="text-white" [routerLink]="'teenagers'" routerLinkActive="active">Elementary</a>
 
-        <a class="text-white" [routerLink]="'adults'" routerLinkActive="active">Adults</a>
+        <a class="text-white" [routerLink]="'adults'" routerLinkActive="active">Advanced</a>
+        <a class="text-white" [routerLink]="'all-worksheets'" routerLinkActive="active">All Levels</a>
+
 
       </div>
     </div>
@@ -31,4 +33,44 @@
       <router-outlet></router-outlet>
     </div>
   </div>
+</div>-->
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <aside class="col-2 px-3  position-fixed">
+
+      <div class="list-group w-100 sidenav">
+        <h2>Worksheets</h2>
+        <a class="list-group-item" [routerLink]="'kindergartens'" routerLinkActive="active">Kindergartens</a>
+
+        <a class="list-group-item" [routerLink]="'teenagers'" routerLinkActive="active">Elementary</a>
+
+        <a class="list-group-item" [routerLink]="'adults'" routerLinkActive="active">Advanced</a>
+
+        <a class="list-group-item" [routerLink]="'all-worksheets'" routerLinkActive="active">All Levels</a>
+
+
+        <h2>Powerpoint</h2>
+        <a class="list-group-item" [routerLink]="'kindergartens-ppt'" routerLinkActive="active">Kindergartens</a>
+
+        <a class="list-group-item" [routerLink]="'teenagers-ppt'" routerLinkActive="active">Elementary</a>
+
+        <a class="list-group-item" [routerLink]="'adults-ppt'" routerLinkActive="active">Advanced</a>
+
+        <a class="list-group-item" [routerLink]="'all-worksheets=ppt'" routerLinkActive="active">All Levels</a>
+      </div>
+    </aside>
+    <main class="col offset-2 h-100">
+      <div class="row">
+        <div class="col-12 py-4">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
 </div>

@@ -1,14 +1,14 @@
 
-<div class="container-fluid mt-4 pt-4">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row p-previewer">
 
-    <div class="col-8 text-center">
-      <pdf-viewer class="file-previewer"
-                  [src]="imSrc" style="display: block" [render-text]="true">
+    <div class="col-sm-9 col-lg-9 col-md-9 text-center ">
+      <pdf-viewer class="ng2-pdf-viewer-container"
+        [src]="imSrc" style="display: block" [render-text]="true">
       </pdf-viewer>
     </div>
 
-    <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="col-sm-3 col-lg-3 col-md-3">
       <h3>
         Worksheets Upload
       </h3>
@@ -18,28 +18,40 @@
       <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
         <div class="form-group">
           <h4>Please choose a file for upload</h4>
-          <input type="file" class="form-control" formControlName="file" #fileUpload
+          <input type="file" class="form-control" formControlName="selectedFile"
                (change)="previewFile($event)">
-          <div class="text-danger" *ngIf="isSubmitted && formControls.file.errors?.required">
-            Please choose a file to upload</div>
           <p>Please choose a file to upload <span class="text-warning">(pdfs, docs, or ppts)</span> </p>
+          <div class="text-danger" *ngIf="isSubmitted && formControls.selectedFile.errors?.required">
+            A file is required</div>
         </div>
 
         <h5>Topic</h5>
         <div class="form-group">
           <select class="form-control"  formControlName="topic">
+            <option>Animals</option>
+            <option>Travel</option>
+            <option>Transportation</option>
+            <option>Free time</option>
+            <option>Daily Routine</option>
+            <option>Family</option>
           </select>
           <div class="text-danger" *ngIf="isSubmitted && formControls.topic.errors?.required">
-            Choose a topic for this material
+            Topic is required
           </div>
         </div>
 
         <h5>Category</h5>
         <div class="form-group">
           <select class="form-control" formControlName="category">
+            <option>Worksheet</option>
+            <option>Powerpoint</option>
+            <option>Classroom game</option>
+            <option>Intermediate</option>
+            <option>Flashcard</option>
+            <option>Others</option>
           </select>
           <div class="text-danger" *ngIf="isSubmitted && formControls.category.errors?.required">
-            Please select category for this material
+            Category is required
           </div>
         </div>
 
@@ -54,26 +66,25 @@
             <option>Advanced</option>
             <option>Others</option>
           </select>
-          <div class="text-danger" *ngIf="isSubmitted && formControls.studentsLevel.errors?.required">
-            Please specify students level for this material.
+          <div class="text-danger"
+               *ngIf="isSubmitted && formControls.studentsLevel.errors?.required">
+            Students level is required
           </div>
         </div>
-
         <div class="form-group">
           <h5>Description</h5>
-          <textarea class="form-control" formControlName="description"></textarea>
-          <div class="text-danger" *ngIf="isSubmitted && formControls.description.errors?.required">
-            Please give a brief description of the material</div>
+          <textarea class="form-control" formControlName="description">
+          </textarea>
+          <div class="text-danger"
+               *ngIf="isSubmitted && formControls.description.errors?.required">
+            Give a brief description.</div>
         </div>
-
         <div class="form-group">
-          <button type="submit" value="upload" class="btn btn-block btn-gradient">
-            <i class="fa fa-fw fa-upload"></i> Upload </button>
+          <button type="submit" class="btn btn-block btn-gradient">
+            <i class="fa fa-fw fa-upload"></i>Submit this Worksheet</button>
         </div>
       </form>
     </div>
-
   </div>
-
 </div>
 

@@ -1,34 +1,19 @@
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="col-md-3 px-1 position-fixed sidenav bg-danger">
-      <h2>Search by Topic</h2>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control"
-               placeholder="enter a topic to search"
-               aria-label="Recipient's username" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-gradient" type="button">Search</button>
+<div class="container">
+  <div class="row py-3">
+    <div class="col-2 order-1" id="sticky-sidebar">
+      <div class="sticky-top">
+        <div class="nav flex-column">
+          <a href="#_" class="nav-link">Link</a>
+          <a href="#_" class="nav-link">Link</a>
+          <a href="#_" class="nav-link">Link</a>
+          <a href="#_" class="nav-link">Link</a>
+          <a href="#_" class="nav-link">Link</a>
         </div>
-      </div>
-
-
-      <div class="text-white">
-        <h2>Worksheets</h2>
-
-        <a class="text-white" [routerLink]="'all-worksheets'" routerLinkActive="active">See all worksheets</a>
-
-        <a class="text-white" [routerLink]="'kindergartens'" routerLinkActive="active">Kindergartens</a>
-
-        <a class="text-white" [routerLink]="'teenagers'" routerLinkActive="active">Teenagers</a>
-
-        <a class="text-white" [routerLink]="'adults'" routerLinkActive="active">Adults</a>
-
       </div>
     </div>
 
-    <div class="col offset-3" id="main">
-      <router-outlet></router-outlet>
+    <div class="col" id="main">
+      <h1>Main Area</h1>
     </div>
   </div>
 </div>

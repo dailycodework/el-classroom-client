@@ -6,6 +6,7 @@ import {TeenagersComponent} from './components/teenagers/teenagers.component';
 import {WorksheetsComponent} from './components/worksheets/worksheets.component';
 import {WorksheetDashbComponent} from './worksheet-dashb.component';
 import {SideNavComponent} from '../shared/side-nav/side-nav.component';
+import {AppModule} from '../app.module';
 
 
 
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(routes)],
   exports: [RouterModule, SideNavComponent],
   declarations: [
     SideNavComponent

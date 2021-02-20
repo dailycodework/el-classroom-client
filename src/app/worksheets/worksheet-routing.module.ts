@@ -1,12 +1,12 @@
 import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
-import {AdultsComponent} from './components/adults/adults.component';
+import {AdvancedComponent} from './components/advanced/advanced.component';
 import {KindergartensComponent} from './components/kindergartens/kindergartens.component';
-import {TeenagersComponent} from './components/teenagers/teenagers.component';
+import {IntermediatesComponent} from './components/intermediates/intermediates.component';
 import {WorksheetsComponent} from './components/worksheets/worksheets.component';
 import {WorksheetDashbComponent} from './worksheet-dashb.component';
 import {SideNavComponent} from '../shared/side-nav/side-nav.component';
-import {AppModule} from '../app.module';
+import {ElementaryComponent} from './components/elementary/elementary.component';
 
 
 
@@ -17,16 +17,15 @@ const routes: Routes = [
          children:[
            {path: 'all-worksheets', component:WorksheetsComponent},
            { path: 'kindergartens', component: KindergartensComponent},
-           { path: 'teenagers', component:TeenagersComponent},
-           { path: 'adults', component: AdultsComponent}
-         ]},
+           { path: 'intermediates', component:IntermediatesComponent},
+           { path: 'elementary', component:ElementaryComponent},
+           { path: 'advanced', component: AdvancedComponent}
+         ]}
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule, SideNavComponent],
-  declarations: [
-    SideNavComponent
-  ]
+  declarations: [SideNavComponent]
 })
 export class WorksheetRoutingModule {}

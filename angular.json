@@ -32,7 +32,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "node_modules/ngx-extended-pdf-viewer/assets/**",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
                 "output": "/assets/"
               }
             ],
@@ -99,7 +99,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/"
             ],
             "styles": [
               "src/styles.css"

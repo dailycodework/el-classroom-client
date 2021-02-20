@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./worksheets.component.scss']
 })
 export class WorksheetsComponent implements OnInit {
+  placeholder = '/assets/images/worksheet1.pdf';
 
   constructor() { }
 

@@ -12,8 +12,8 @@ const routes: Routes = [
   {path: 'powerpoints', component: PowerPointsComponent,
   children:[
     { path: 'kindergartens', component: KindergartensPptComponent},
-    { path: 'teenagers', component:TeenagersPptComponent},
-    { path: 'adults', component: AdultsPptComponent}
+    { path: 'intermediates', component:TeenagersPptComponent},
+    { path: 'advanced', component: AdultsPptComponent}
   ]}
 ];
 

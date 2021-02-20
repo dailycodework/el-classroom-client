@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {finalize} from 'rxjs/operators';
+import {FileUploadService} from '../file-upload.service';
+import {FormService} from '../../services/form.service';
 
 
 @Component({
@@ -14,6 +16,10 @@ export class FileUploadComponent implements OnInit {
  defaultImage = '/assets/images/elclass.pdf';
  imSrc : string = this.defaultImage;
  selectedImage : any;
+ fileName:string = null;
+ topics$;
+ categories$;
+ studentsLevel$
 
 formTemplate = new FormGroup({
   selectedFile : new FormControl('', Validators.required),
@@ -23,9 +29,25 @@ formTemplate = new FormGroup({
   description : new FormControl('',Validators.required)
 });
 
-  constructor(private storage : AngularFireStorage) { }
+
+ newTopic = new FormGroup({
+   topic : new FormControl('', Validators.required)
+ })
+  topic: any;
+
+
+  constructor(
+    private storage : AngularFireStorage,
+    private service:FileUploadService,
+    private formService : FormService) {
+    this.topics$ = formService.getTopics();
+    this.categories$ = formService.getCategories();
+    this.studentsLevel$ = formService.getStudentsLevel();
+    console.log(this.topics$)
+  }
 
   ngOnInit(){
+    this.service.getResourceDetailList();
     this.resetForm();
   }
   previewFile(event:any){
@@ -34,25 +56,25 @@ formTemplate = new FormGroup({
       reader.onload = (e:any) => this.imSrc = e.target.result;
       reader.readAsDataURL(event.target.files[0]);
       this.selectedImage = event.target.files[0];
-      console.log(this.selectedImage.name)
+     // console.log(this.selectedImage.name)
+      this.fileName = this.selectedImage.name;
+     // console.log(this.fileName);
     }
     else
       this.imSrc = this.defaultImage;
      this.selectedImage = null;
   }
 
-  onSubmit(formValues) {
+  onSubmit(formValue) {
     this.isSubmitted = true;
     if(this.formTemplate.valid){
-
-      console.log(formValues.selectedFile)
-      console.log(formValues.name)
-      let filePath = `${formValues.category}/${this.selectedImage.name}_${new Date().getTime()}`;
+      var filePath = `${formValue.category}/${this.fileName.split('.').slice(0,-1).join('.')}_${new Date().getTime()}`;
       const fileRef = this.storage.ref(filePath);
       this.storage.upload(filePath, this.selectedImage)
         .snapshotChanges().pipe(finalize(() =>{
           fileRef.getDownloadURL().subscribe((url) =>{
-            formValues['selectedFile'] = url;
+            formValue['selectedFile'] = url;
+            this.service.saveResourceDetails(formValue);
             this.resetForm();
           })
       })).subscribe();
@@ -74,5 +96,10 @@ formTemplate = new FormGroup({
     this.imSrc = this.defaultImage;
     this.selectedImage = null;
     this.isSubmitted = false;
+  }
+
+  saveTopic(theTopic: string) {
+   this.formService.addTopic(theTopic)
+
   }
 }

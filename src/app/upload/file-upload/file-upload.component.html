@@ -9,7 +9,6 @@
         [autoresize]="true"
         [original-size]="false">
       </pdf-viewer>
-
     </div>
 
     <div class="col-sm-3 col-lg-3 col-md-3">
@@ -22,53 +21,55 @@
       <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
         <div class="form-group">
           <h4>Please choose a file for upload</h4>
-          <input type="file" class="form-control" formControlName="selectedFile"
-               (change)="previewFile($event)">
+          <input type="file" class="form-control"
+                 accept="application/vnd.cups-pdf, application/pdf "
+                 formControlName="selectedFile" (change)="previewFile($event)">
           <p>Please choose a file to upload <span class="text-warning">(pdfs, docs, or ppts)</span> </p>
           <div class="text-danger" *ngIf="isSubmitted && formControls.selectedFile.errors?.required">
             A file is required</div>
         </div>
 
-        <h5>Topic</h5>
+
         <div class="form-group">
-          <select class="form-control"  formControlName="topic">
-            <option>Animals</option>
-            <option>Travel</option>
-            <option>Transportation</option>
-            <option>Free time</option>
-            <option>Daily Routine</option>
-            <option>Family</option>
+          <div class="row">
+            <label for="topic" class="col-md-6 col-lg-6 col-sm-12">
+              <h5>Select topic</h5></label>
+            <a href="#" (click)="frame.show()" class="col-md-6 col-lg-6 col-sm-12">
+              no matching topic</a>
+          </div>
+
+          <select class="form-control"  formControlName="topic" id="topic">
+            <option></option>
+            <option *ngFor="let t of topics$ | async" [value]="t.$key">
+              {{t.name}}
+            </option>
           </select>
           <div class="text-danger" *ngIf="isSubmitted && formControls.topic.errors?.required">
             Topic is required
           </div>
         </div>
 
-        <h5>Category</h5>
         <div class="form-group">
-          <select class="form-control" formControlName="category">
-            <option>Worksheet</option>
-            <option>Powerpoint</option>
-            <option>Classroom game</option>
-            <option>Intermediate</option>
-            <option>Flashcard</option>
-            <option>Others</option>
+          <label for="categories"><h5>Select category</h5></label>
+          <select class="form-control" formControlName="category" id="categories">
+            <option></option>
+            <option *ngFor="let c of categories$ | async " [value]="c.$key">
+              {{c.name }}
+            </option>
           </select>
           <div class="text-danger" *ngIf="isSubmitted && formControls.category.errors?.required">
             Category is required
           </div>
         </div>
 
-        <h5>Students level</h5>
+
         <div class="form-group">
-          <select class="form-control" formControlName="studentsLevel">
-            <option>select students level</option>
-            <option>pre-school</option>
-            <option>Kindergarten</option>
-            <option>Elementary</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
-            <option>Others</option>
+          <label for="studentLevel"><h5>Select students level</h5></label>
+          <select class="form-control" formControlName="studentsLevel" id="studentLevel">
+           <option></option>
+           <option *ngFor="let l of studentsLevel$ | async " [value]="l.$key">
+             {{ l.name }}
+           </option>
           </select>
           <div class="text-danger"
                *ngIf="isSubmitted && formControls.studentsLevel.errors?.required">
@@ -76,8 +77,8 @@
           </div>
         </div>
         <div class="form-group">
-          <h5>Description</h5>
-          <textarea class="form-control" formControlName="description">
+          <label for="description"><h5>Give a brief description</h5></label>
+          <textarea class="form-control" formControlName="description" id="description">
           </textarea>
           <div class="text-danger"
                *ngIf="isSubmitted && formControls.description.errors?.required">
@@ -92,3 +93,40 @@
   </div>
 </div>
 
+
+
+
+
+
+<!--Creating the modal form for new topic entries-->
+
+<!--
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="note" class="prefix grey-text"></mdb-icon>
+
+          <input type="text" id="new-topic" name="topic" formControlName="topic" class="form-control"
+                 mdbInput mdbValidate>
+          <label for="new-topic">Enter a new topic</label>
+        </div>
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="default" class="waves-light" mdbWavesEffect>Add topic</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+-->

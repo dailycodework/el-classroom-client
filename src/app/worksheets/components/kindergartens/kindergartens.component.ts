@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kindergartens.component.scss']
 })
 export class KindergartensComponent implements OnInit {
-  title = "kindergartens";
+  placeholder = '/assets/images/worksheet1.pdf';
 
   constructor() { }
 

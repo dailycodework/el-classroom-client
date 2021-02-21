@@ -23,19 +23,17 @@
           <h4>Please choose a file for upload</h4>
           <input type="file" class="form-control"
                  accept="application/vnd.cups-pdf, application/pdf "
-                 formControlName="selectedFile" (change)="previewFile($event)">
+                 formControlName="fileUrl" (change)="previewFile($event)">
           <p>Please choose a file to upload <span class="text-warning">(pdfs, docs, or ppts)</span> </p>
-          <div class="text-danger" *ngIf="isSubmitted && formControls.selectedFile.errors?.required">
+          <div class="text-danger" *ngIf="isSubmitted && formControls.fileUrl.errors?.required">
             A file is required</div>
         </div>
-
 
         <div class="form-group">
           <div class="row">
             <label for="topic" class="col-md-6 col-lg-6 col-sm-12">
               <h5>Select topic</h5></label>
-            <a href="#" (click)="frame.show()" class="col-md-6 col-lg-6 col-sm-12">
-              no matching topic</a>
+            <a class="a-hand text-primary" (click)="frame.show()">No matching topic?</a>
           </div>
 
           <select class="form-control"  formControlName="topic" id="topic">
@@ -53,7 +51,7 @@
           <label for="categories"><h5>Select category</h5></label>
           <select class="form-control" formControlName="category" id="categories">
             <option></option>
-            <option *ngFor="let c of categories$ | async " [value]="c.$key">
+            <option *ngFor="let c of categories$ | async" [value]="c.$key">
               {{c.name }}
             </option>
           </select>
@@ -67,7 +65,7 @@
           <label for="studentLevel"><h5>Select students level</h5></label>
           <select class="form-control" formControlName="studentsLevel" id="studentLevel">
            <option></option>
-           <option *ngFor="let l of studentsLevel$ | async " [value]="l.$key">
+           <option *ngFor="let l of studentsLevel$ | async" [value]="l.$key">
              {{ l.name }}
            </option>
           </select>
@@ -100,33 +98,33 @@
 
 <!--Creating the modal form for new topic entries-->
 
-<!--
-<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop"
-     tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
+<div mdbModal #frame="mdbModal" class="modal fade left p-previewer" id="frameModalTop">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Enter a new topic</h4>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close" (click)="frame.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <mdb-icon fas icon="note" class="prefix grey-text"></mdb-icon>
-
-          <input type="text" id="new-topic" name="topic" formControlName="topic" class="form-control"
-                 mdbInput mdbValidate>
-          <label for="new-topic">Enter a new topic</label>
-        </div>
-
-      <div class="modal-footer d-flex justify-content-center">
-        <button mdbBtn color="default" class="waves-light" mdbWavesEffect>Add topic</button>
-      </div>
+        <form [formGroup]="newTopic" (submit)="addNewTopic(newTopic.value)">
+            <div class="md-form mb-5">
+              <input type="text" id="new-topic" formControlName="name"
+                     class="form-control" mdbInput mdbValidate>
+              <div class="text-danger"
+                   *ngIf="isSubmitted && formControls.topic.errors?.required">
+                Please enter a new topic to be added
+              </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button mdbBtn  class="waves-light btn-gradient" rounded="true"
+                      mdbWavesEffect>Add topic</button>
+            </div>
+          </form>
     </div>
   </div>
 </div>
 </div>
--->
+

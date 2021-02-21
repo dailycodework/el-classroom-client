@@ -17,9 +17,6 @@ const routes: Routes = [
 
   {path: 'upload-file',   component: FileUploadComponent},
 
-  {path: 'download/',  component: DownloadComponent},
-
-
   { path: 'worksheets',
     loadChildren: () => import('./worksheets/worksheet.module')
       .then(m => m.WorksheetModule) },

@@ -7,6 +7,7 @@ import {WorksheetsComponent} from './components/worksheets/worksheets.component'
 import {WorksheetDashbComponent} from './worksheet-dashb.component';
 import {SideNavComponent} from '../shared/side-nav/side-nav.component';
 import {ElementaryComponent} from './components/elementary/elementary.component';
+import {DownloadComponent} from '../download/download.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
            { path: 'kindergartens', component: KindergartensComponent},
            { path: 'intermediates', component:IntermediatesComponent},
            { path: 'elementary', component:ElementaryComponent},
-           { path: 'advanced', component: AdvancedComponent}
+           { path: 'advanced', component: AdvancedComponent},
+           {path: ':id',  component: DownloadComponent}
          ]}
 ];
 

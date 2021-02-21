@@ -54,5 +54,4 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-}
+export class AppModule {}

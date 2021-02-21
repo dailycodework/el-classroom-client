@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {finalize} from 'rxjs/operators';
-import {FileUploadService} from '../file-upload.service';
+import {FileService} from '../../services/file.service';
 import {FormService} from '../../services/form.service';
 
 
@@ -22,7 +22,7 @@ export class FileUploadComponent implements OnInit {
  studentsLevel$
 
 formTemplate = new FormGroup({
-  selectedFile : new FormControl('', Validators.required),
+  fileUrl : new FormControl('', Validators.required),
   topic : new FormControl('', Validators.required),
   studentsLevel : new FormControl('', Validators.required),
   category : new FormControl('',Validators.required),
@@ -31,23 +31,23 @@ formTemplate = new FormGroup({
 
 
  newTopic = new FormGroup({
-   topic : new FormControl('', Validators.required)
+   name : new FormControl('', Validators.required)
  })
-  topic: any;
+
 
 
   constructor(
     private storage : AngularFireStorage,
-    private service:FileUploadService,
+    private service:FileService,
     private formService : FormService) {
     this.topics$ = formService.getTopics();
     this.categories$ = formService.getCategories();
     this.studentsLevel$ = formService.getStudentsLevel();
-    console.log(this.topics$)
   }
 
   ngOnInit(){
-    this.service.getResourceDetailList();
+    this.service.getFileDetails();
+    this.service.getNewTopic();
     this.resetForm();
   }
   previewFile(event:any){
@@ -73,8 +73,8 @@ formTemplate = new FormGroup({
       this.storage.upload(filePath, this.selectedImage)
         .snapshotChanges().pipe(finalize(() =>{
           fileRef.getDownloadURL().subscribe((url) =>{
-            formValue['selectedFile'] = url;
-            this.service.saveResourceDetails(formValue);
+            formValue['fileUrl'] = url;
+            this.service.saveFileDetails(formValue);
             this.resetForm();
           })
       })).subscribe();
@@ -87,7 +87,7 @@ formTemplate = new FormGroup({
   resetForm(){
     this.formTemplate.reset();
     this.formTemplate.setValue({
-      selectedFile :'',
+      fileUrl :'',
       topic : '',
       studentsLevel :'',
       category : '',
@@ -98,8 +98,12 @@ formTemplate = new FormGroup({
     this.isSubmitted = false;
   }
 
-  saveTopic(theTopic: string) {
-   this.formService.addTopic(theTopic)
 
+  addNewTopic(theTopic: any) {
+   this.service.addTopic(theTopic);
+   this.newTopic.reset();
+   this.newTopic.setValue({
+     name : ''
+   })
   }
 }

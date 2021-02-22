@@ -1,21 +1,135 @@
-<div class="container-fluid">
+<div class="container-fluid download">
+  <div class="row">
+    <aside class=" px-3 col-sm-8 col-lg-8 col-md-8 text-center position-fixed">
 
-<!--  <ngx-extended-pdf-viewer
-    [src]="imSrc"
-    [showDownloadButton]="true"
-    useBrowserLocale="true">
-  </ngx-extended-pdf-viewer>-->
+      <ngx-extended-pdf-viewer
+        [src]="'assets/images/elclass.pdf'"
+        useBrowserLocale="true"
+        [showPrintButton]="true"
+        [showBookmarkButton]="false"
+        [showOpenFileButton]="false"
+        [showSidebarButton]="true"
+        [showDownloadButton]="true"
+        height="80vh">
+      </ngx-extended-pdf-viewer>
+    </aside>
+
+    <main class="col offset-8">
+      <div class="row">
+        <h3>Related worksheets</h3>
+        <div class="col-12">
+          <!-- <router-outlet></router-outlet>-->
+
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
+
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
 
 
-  <ngx-extended-pdf-viewer
-    [src]="imSrc"
-    [showPrintButton]="true"
-    [showBookmarkButton]="false"
-    [showOpenFileButton]="false"
-    [showSidebarButton]="true"
-    [showDownloadButton]="true"
-    delayFirstView="6000"
-    useBrowserLocale="false">
-  </ngx-extended-pdf-viewer>
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
 
+
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
+
+
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
+
+
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
+
+
+          <div class="card m-2" style="width: 20rem;">
+            <a routerLink="/worksheets/adults">
+              <pdf-viewer class="ng2-pdf-viewer-container"
+                          [src]="placeholder" [render-text]="true"
+                          [autoresize]="true" [original-size]="false">
+              </pdf-viewer>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Title goes here</h5>
+              <p class="card-text">Some quick example text to build </p>
+              <a href="#" class="btn btn-gradient">view / download</a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </main>
+  </div>
 </div>
+
+
+

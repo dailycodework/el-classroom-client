@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase} from '@angular/fire/database';
+import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import {FileService} from '../../../services/file.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {FileService} from '../../../services/file.service';
 })
 export class WorksheetsComponent implements OnInit {
   placeholder = '/assets/images/worksheet1.pdf';
-  resources : any[];
+  resources : any[] = [];
   constructor(
     private db : AngularFireDatabase,
     private fileService: FileService

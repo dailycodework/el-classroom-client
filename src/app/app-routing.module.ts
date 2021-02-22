@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: 'powerpoints',  component: PowerPointsComponent},
 
   {path: 'upload-file',   component: FileUploadComponent},
+  {path: 'download',   component: DownloadComponent},
 
   { path: 'worksheets',
     loadChildren: () => import('./worksheets/worksheet.module')

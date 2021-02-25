@@ -26,18 +26,19 @@
         <div class="collapse  navbar-collapse flex-grow-1 text-right"
              id="collapseExample" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav ml-auto flex-nowrap">
+
                 <li class="nav-item" (click)="hidemenu()">
-                    <a routerLink="/all-worksheets"  class="nav-link m-2 menu-item nav-active">Worksheets</a>
+                    <a routerLink="/worksheets"  class="nav-link m-2 menu-item nav-active">Worksheets</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
-                    <a routerLink="/powerpoints" class="nav-link m-2 menu-item nav-active">PowerPoints</a>
+                    <a routerLink="/powerpoint" class="nav-link m-2 menu-item nav-active">PowerPoints</a>
                 </li>
 
                 <li (click)="hidemenu()" class="nav-item">
                     <a routerLink="/contact" class="nav-link m-2 menu-item">Leave a suggestion</a>
                 </li>
               <li (click)="hidemenu()" class="nav-item">
-                <a routerLink="/upload-file" class="nav-link m-2 menu-item">Upload worksheets</a>
+                <a routerLink="/upload" class="nav-link m-2 menu-item">Upload resource</a>
               </li>
 
                 <!-- drop down menu start -->

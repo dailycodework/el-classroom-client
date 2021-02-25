@@ -1,6 +1,4 @@
 
-import { ScrollToDirective } from '../helpers/scrollTo.directives';
-import { WINDOW_PROVIDERS } from '../helpers/window.helpers';
 import { NgModule } from '@angular/core';
 // import { NgForm } from "@angular/forms";
 import { CommonModule } from '@angular/common';
@@ -12,10 +10,7 @@ import { WorksheetSectionComponent } from './components/workshts/worksheet-secti
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { PptComponent } from './components/ppt/ppt.component';
-import { FormsModule } from '@angular/forms';
-import {WorksheetModule} from '../worksheets/worksheet.module';
 import {RouterModule} from '@angular/router';
-import {PowerPointsModule} from '../powerpoints/power-points.module';
 import {HomeHeaderComponent} from '../shared/home-header/home-header.component';
 
 
@@ -26,9 +21,6 @@ import {HomeHeaderComponent} from '../shared/home-header/home-header.component';
     CommonModule,
     NguCarouselModule,
     NgbModule,
-    FormsModule,
-    WorksheetModule,
-    PowerPointsModule,
     RouterModule
   ],
   declarations: [
@@ -38,13 +30,12 @@ import {HomeHeaderComponent} from '../shared/home-header/home-header.component';
     ContactFormComponent,
     FooterComponent,
     PptComponent,
-    ScrollToDirective,
-    HomeHeaderComponent,
+    HomeHeaderComponent
   ],
   exports: [
     FooterComponent,
-    HomeHeaderComponent,
+    HomeHeaderComponent
   ],
-  providers: [WINDOW_PROVIDERS]
+  providers: []
 })
 export class HomeModule {}

@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+  <div class="row">
+
+    <aside class="col-2 position-fixed" style="height: auto">
+      <div class="list-group w-100 sidenav">
+        <h4>Students level</h4>
+        <a routerLink="#" class="list-group-item"
+           *ngFor="let stl of studentsLevel$ | async">
+          {{ stl. name }}
+        </a>
+      </div>
+    </aside>
+
+    <main class="col offset-2 h-50">
+      <section id="teams-wrap" class="worksheet-wrap p-t-b-80 light-gray">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12  section-header mb-5">
+              <h2 class="font-weight-bold">Powerponits</h2>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col offset-4 text-danger">The content of ths page has not been released</div>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="container-fluid">
+        <h2> Browse resource by topic</h2>
+        <div class="row">
+          <a routerLink="#" class="text-center col-3 border border-warning rounded-pill"
+             *ngFor="let t of topics$ | async">
+            {{ t.name }}
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>

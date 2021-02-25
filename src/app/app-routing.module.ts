@@ -1,40 +1,50 @@
-import {NgModule} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {WorksheetModule} from './worksheets/worksheet.module';
-import {PowerPointsModule} from './powerpoints/power-points.module';
+import {PowerPointsComponent} from './resources/powerpoints/power-points.component';
+import {ResourcesUploadComponent} from './resources/resources-upload/resources-upload.component';
 
-import {PowerPointsComponent} from './powerpoints/components/powerpoints/power-points.component';
-import {FileUploadComponent} from './upload/file-upload/file-upload.component';
-import {DownloadComponent} from './download/download.component';
 import {ContactFormComponent} from './home/components/contact-form/contact-form.component';
-
+import {ResourceComponent} from './resources/resource.component';
+import {WorksheetsComponent} from './resources/worksheets/worksheets.component';
+import {DownloadComponent} from './resources/download/download.component';
+import {ResourceModule} from './resources/resource.module';
+import {ResourceRoutingModule} from './resources/resource-routing.module';
 
 
 const routes: Routes = [
 
-  {path: 'powerpoints',  component: PowerPointsComponent},
+  {
+    path: 'contact',
+    component: ContactFormComponent
+  },
 
-  {path: 'upload-file',   component: FileUploadComponent},
-  {path: 'download',   component: DownloadComponent},
+  {
+    path: 'upload',
+    component: ResourcesUploadComponent
+  },
 
-  { path: 'worksheets',
-    loadChildren: () => import('./worksheets/worksheet.module')
-      .then(m => m.WorksheetModule) },
+  {
+    path: 'download',
+    component: DownloadComponent
+  },
 
-  {path: 'all-worksheets',
-    redirectTo : 'worksheets/all-worksheets', pathMatch: 'full'},
+  {
+    path: 'worksheets', redirectTo :'resources/worksheets'
+  },
 
-  {path: 'contact', component: ContactFormComponent},
+  {
+    path: 'powerpoint', redirectTo :'resources/powerpoint'
+  },
 
   {path: '', component: HomeComponent}
 ];
 
 @NgModule({
   imports: [
-    WorksheetModule,
-    PowerPointsModule,
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-    exports: [RouterModule]
+    ResourceRoutingModule,
+    RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'})],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

@@ -1,0 +1,131 @@
+
+<div class="container-fluid">
+  <div class="row p-previewer">
+
+    <div class="col-sm-9 col-lg-9 col-md-9 text-center ">
+      <pdf-viewer class="ng2-pdf-viewer-container"
+        [src]="imSrc"
+        [render-text]="true"
+        [autoresize]="true"
+        [original-size]="false">
+      </pdf-viewer>
+    </div>
+
+    <div class="col-sm-3 col-lg-3 col-md-3">
+      <h3>
+        Worksheets Upload
+      </h3>
+      <p>Every uploaded materials will be available for public use after
+        been reviewed and approved
+      </p>
+      <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+        <div class="form-group">
+          <h4>Please choose a file for upload</h4>
+          <input  type="file" class="form-control"
+                 accept="application/vnd.psfs, application/pdf "
+                 formControlName="fileUrl" (change)="previewFile($event)">
+          <p>Please choose a file to upload <span class="text-warning">(pdfs, docs, or ppts)</span>
+          </p>
+          <div class="text-danger" *ngIf="isSubmitted && formControls.fileUrl.errors?.required">
+            A file is required</div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <label for="topic" class="col-md-6 col-lg-6 col-sm-12">
+              <h5>Select topic</h5></label>
+            <a class="a-hand text-primary" (click)="frame.show()">No matching topic?</a>
+          </div>
+
+          <select class="form-control"  formControlName="topic" id="topic">
+            <option></option>
+            <option *ngFor="let t of topics$ | async" [value]="t.name">
+              {{t.name}}
+            </option>
+          </select>
+          <div class="text-danger" *ngIf="isSubmitted && formControls.topic.errors?.required">
+            Topic is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="category"><h5>Select category</h5></label>
+          <select class="form-control" formControlName="category" id="category">
+            <option></option>
+            <option *ngFor="let c of categories$ | async" [value]="c.name">
+              {{c.name }}
+            </option>
+          </select>
+          <div class="text-danger" *ngIf="isSubmitted && formControls.category.errors?.required">
+            Category is required
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="studentLevel"><h5>Select students level</h5></label>
+          <select class="form-control" formControlName="studentsLevel" id="studentLevel">
+           <option></option>
+           <option *ngFor="let l of studentsLevel$ | async" [value]="l.name">
+             {{ l.name }}
+           </option>
+          </select>
+          <div class="text-danger"
+               *ngIf="isSubmitted && formControls.studentsLevel.errors?.required">
+            Students level is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description"><h5>Give a brief description</h5></label>
+          <textarea class="form-control" formControlName="description" id="description">
+          </textarea>
+          <div class="text-danger"
+               *ngIf="isSubmitted && formControls.description.errors?.required">
+            Give a brief description.</div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-block btn-gradient">
+            <i class="fa fa-fw fa-upload"></i>Submit this Worksheet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--Creating the modal form for new topic entries-->
+
+<div mdbModal #frame="mdbModal" class="modal fade left p-previewer" id="frameModalTop">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Enter a new topic</h4>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form [formGroup]="newTopic" (submit)="addNewTopic(newTopic.value)">
+            <div class="md-form mb-5">
+              <input type="text" id="new-topic" formControlName="name"
+                     class="form-control" mdbInput mdbValidate>
+              <div class="text-danger"
+                   *ngIf="isSubmitted && formControls.topic.errors?.required">
+                Please enter a new topic to be added
+              </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button mdbBtn  class="waves-light btn-gradient" rounded="true"
+                      mdbWavesEffect>Add topic</button>
+            </div>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+

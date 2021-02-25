@@ -14,19 +14,18 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
-import {FileUploadComponent} from './upload/file-upload/file-upload.component';
+import {ResourcesUploadComponent} from './resources/resources-upload/resources-upload.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
-import {DownloadComponent} from './download/download.component';
-import {WorksheetRoutingModule} from './worksheets/worksheet-routing.module';
+import {DownloadComponent} from './resources/download/download.component';
 import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
-import {FormService} from './services/form.service';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import {ResourceService} from './resources/resource.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileUploadComponent,
+    ResourcesUploadComponent,
     DownloadComponent
   ],
   imports: [
@@ -45,11 +44,10 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     NgbCollapseModule,
     PdfViewerModule,
     NgxExtendedPdfViewerModule,
-    WorksheetRoutingModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers:[FormService],
+  providers:[ResourceService],
   exports: [AppComponent],
   bootstrap: [AppComponent]
 })
